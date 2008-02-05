@@ -3,7 +3,7 @@
 
 Name:           simplyhtml0.11
 Version:        0.11
-Release:        %mkrel 0.0.1
+Release:        %mkrel 0.0.2
 Epoch:          0
 Summary:        Application and a java component for rich text processing
 License:        GPL
@@ -37,8 +37,8 @@ Javadoc documentation for %{name}.
 %prep
 %setup -q -c
 %{__perl} -pi -e 's/\r$//g' gpl.txt readme.txt
-##%{_bindir}/find . -name '*.jar' | %{_bindir}/xargs -t %{__rm}
-%{__ln_s}f $(build-classpath javahelp2) jhall.jar
+%{_bindir}/find . -name '*.jar' | %{_bindir}/xargs -t %{__rm}
+%{__ln_s} $(build-classpath javahelp2) jhall.jar
 %{__mkdir_p} api
 
 %build
