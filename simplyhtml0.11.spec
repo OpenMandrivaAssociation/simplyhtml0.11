@@ -3,7 +3,7 @@
 
 Name:           simplyhtml0.11
 Version:        0.11
-Release:        %mkrel 0.0.2
+Release:        %mkrel 0.0.3
 Epoch:          0
 Summary:        Application and a java component for rich text processing
 License:        GPL
