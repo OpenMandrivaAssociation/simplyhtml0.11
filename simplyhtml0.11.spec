@@ -3,7 +3,7 @@
 
 Name:           simplyhtml0.11
 Version:        0.11
-Release:        %mkrel 0.0.3
+Release:        4
 Epoch:          0
 Summary:        Application and a java component for rich text processing
 License:        GPL
@@ -19,7 +19,6 @@ BuildRequires:  java-gcj-compat-devel
 BuildArch:      noarch
 %endif
 BuildRequires:  java-rpmbuild
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 SimplyHTML is an application and a java component for rich text
@@ -52,8 +51,6 @@ export CLASSPATH=$(build-classpath javahelp2)
 cd ..
 
 %install
-%{__rm} -rf %{buildroot}
-
 %{__mkdir_p} %{buildroot}%{_javadir}
 %{__cp} -a SimplyHTML0.11.jar %{buildroot}%{_javadir}/%{name}-%{version}.jar
 %{__ln_s} %{name}-%{version}.jar %{buildroot}%{_javadir}/%{name}.jar
@@ -61,7 +58,7 @@ cd ..
 %{__ln_s} SimplyHTML0.11-%{version}.jar %{buildroot}%{_javadir}/SimplyHTML0.11.jar
 
 %{__mkdir_p} %{buildroot}%{_javadocdir}/%{name}-%{version}
-%{__cp} -a api/* %{buildroot}%{_javadocdir}/%{name}-%{version}
+cp -pr api/* %{buildroot}%{_javadocdir}/%{name}-%{version}
 %{__ln_s} %{name}-%{version} %{buildroot}%{_javadocdir}/%{name}
 
 %if %{gcj_support}
@@ -69,7 +66,6 @@ cd ..
 %endif
 
 %clean
-%{__rm} -rf %{buildroot}
 
 %if %{gcj_support}
 %post
@@ -92,3 +88,19 @@ cd ..
 %defattr(0644,root,root,0755)
 %doc %{_javadocdir}/%{name}-%{version}
 %doc %{_javadocdir}/%{name}
+
+
+%changelog
+* Tue Sep 08 2009 Thierry Vignaud <tvignaud@mandriva.com> 0:0.11-0.0.3mdv2010.0
++ Revision: 433815
+- rebuild
+
+* Tue Feb 05 2008 David Walluck <walluck@mandriva.org> 0:0.11-0.0.2mdv2008.1
++ Revision: 162837
+- remove jars before build
+
+* Tue Feb 05 2008 David Walluck <walluck@mandriva.org> 0:0.11-0.0.1mdv2008.1
++ Revision: 162836
+- import simplyhtml0.11
+
+
