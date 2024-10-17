@@ -8,7 +8,7 @@ Epoch:          0
 Summary:        Application and a java component for rich text processing
 License:        GPL
 Group:          Development/Java
-URL:            http://www.lightdev.com/page/3.htm
+URL:            https://www.lightdev.com/page/3.htm
 Source0:        http://www.lightdev.com/dload/shtm_r.zip
 Source1:        simplyhtml0.11-manifest.mf
 Requires:       javahelp2
